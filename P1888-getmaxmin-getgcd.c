@@ -1,37 +1,24 @@
 // 输入一组勾股数 a,b,c, abc不相等 用分数格式输出其较小锐角的正弦值。（要求约分。）
 #include<stdio.h>
 
-int a, b, c;
-int max, min, gcd;
-
-
-
 int getmax(int a, int b, int c) {
-    int max;
-    if ((a > b && b > c) || (a > c && c > b)){
-        max = a;
+    if (a > b && a > c) {
+        return a;
     }
-    if ((b > a && a > c) || (b > c && c > a)){
-        max = b;
+    if (b > a && b > c) {
+        return b;
     }
-    if ((c > a && a > b) || (c > b && b > a)){
-        max = c;
-    }
-    return max;
+    return c;
 }
 
 int getmin(int a, int b, int c) {
-    int min;
-    if ((a < b && b < c) || (a < c && c < b)){
-        min = a;
+    if (a < b && a < c) {
+        return a;
     }
-    if ((b < a && a < c) || (b < c && c < a)){
-        min = b;
+    if (b < a && b < c) {
+        return b;
     }
-    if ((c < a && a < b) || (c < b && b < a)){
-        min = c;
-    }
-    return min;
+    return c;
 }
 
 // 找最大公约数
@@ -46,9 +33,12 @@ int getgcd(int x, int y) {
 }
 
 int main() {
-    scanf ("%d%d%d", &a, &b, &c);
-    max = getmax(a,b,c);
-    min = getmin(a,b,c);
+    int a, b, c;
+    int max, min, gcd;
+
+    scanf("%d%d%d", &a, &b, &c);
+    max = getmax(a, b, c);
+    min = getmin(a, b, c);
     gcd = getgcd(max, min);
     printf("%d/%d\n", min/gcd, max/gcd);
     return 0;

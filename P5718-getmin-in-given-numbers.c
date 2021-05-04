@@ -5,12 +5,12 @@ int main() {
     int n, i, tmp, min;
     min = 1000;
     scanf("%d", &n);
-    for (i = 0; i < n; i = i + 1) {
+    for (i = 0; i < n; i++) {
         scanf("%d", &tmp);
         if (tmp < min) {
             min = tmp;
         } 
     } 
-    printf ("%d\n", min);
+    printf("%d\n", min);
     return 0;
 }

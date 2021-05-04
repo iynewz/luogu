@@ -2,49 +2,13 @@
 
 int main()
 {
+    int x;
+    bool check_x_1, check_x_2;
 
-    int x, check_x_1, check_x_2;
-
-    int a, b, c, d;
-    
     scanf("%d", &x);
+    check_x_1 = ((x % 2) == 0);
+    check_x_2 = (4 < x && x <= 12);
 
-    if (x % 2 == 0) {
-        check_x_1 = 1;
-    } else {
-        check_x_1 = 0;
-    }
-
-    if (4 < x && x <= 12) {
-        check_x_2 = 1;
-    } else {
-        check_x_2 = 0;
-    }
-
-    if (check_x_1 == 1 && check_x_2 == 1) {
-        a = 1;
-    } else {
-        a = 0;
-    }
-
-    if (check_x_1 == 1 || check_x_2 == 1) {
-        b = 1;
-    } else {
-        b = 0;
-    }
-
-    if (check_x_1 == 1 ^ check_x_2 == 1) {
-        c = 1;
-    } else {
-        c = 0;
-    }
-
-    if (check_x_1 == 0 && check_x_2 == 0) {
-        d = 1;
-    } else {
-        d = 0;
-    }    
-
-    printf("%d %d %d %d \n", a, b, c, d);
+    printf("%d %d %d %d\n", check_x_1 && check_x_2, check_x_1 || check_x_2, check_x_1 ^ check_x_2, !check_x_1 && !check_x_2);
     return 0;
 }
