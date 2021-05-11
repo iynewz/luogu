@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#define MAX_STACK 129
+#define MAX_STACK 1111
 
 int stack[MAX_STACK];
 int top = 0; // top = 1 时， 元素有一个， 元素位置在 stack[0],
@@ -36,18 +36,16 @@ int find_top() {
 int main() {
     char ch;
     int item = 0;
-    while(ch != '@') {
-        ch = getchar();
-        printf("%s\n", &ch);
+    while((ch = getchar()) != '@') {
+        // printf("%c\n", ch);
         if('0' <= ch && ch <= '9') {
-            item = 10 * item + ch - '0';
-            push(item);
+            item = 10 * item + ch - '0'; 
         }
-        if(ch == '.') {
-            push(0);
+        else if(ch == '.') {
+            push(item);
+            item = 0;
         }
         else {
-            pop();
             int x = find_top();
             pop();
             int y = find_top();
@@ -68,6 +66,9 @@ int main() {
         }
         
     }
-    printf("%d\n", (int)find_top);
+
+    printf("%d\n", find_top());
     return 0;
 }
+
+
