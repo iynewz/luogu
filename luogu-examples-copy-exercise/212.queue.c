@@ -18,7 +18,7 @@ void push(int x) {
 
 // 弹出队首元素
 void pop() {
-    if(tail == head) {
+    if(tail == head ) {
         printf("The queue is empty.");
     }
     else head += 1;
