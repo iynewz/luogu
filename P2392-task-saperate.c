@@ -15,9 +15,9 @@ int main() {
         int time_for_each_course = 0x3f3f3f3f;
         // we don't use pow here because it will be evaluated 2^n times! and that is slow!
         // s means state
-        for(int s = 0; s < (1<<n); s++){
+        for(int s = 0; s < (1<<n); s++){ // n 道题目， 2 ^ n states
             int t = s;
-            // we decompose t so that we don't mess s up
+            // we decompose t so that we don't mess up
             int left_time_sum = 0;
             int right_time_sum = 0;
             for(int k = 0; k < n; k++) { 
@@ -27,6 +27,15 @@ int main() {
                     right_time_sum += prob[k];
                 }
             }
+/*
+            for(int k = 0; k < n; k++) {
+                if (t % 2 == 0) {
+                    left_time_sum += prob[k];
+                } else {
+                    right_time_sum += prob[k];
+                }
+                t = t / 2;
+*/
             int time_consumption = left_time_sum < right_time_sum ? right_time_sum : left_time_sum;
             time_for_each_course = time_for_each_course < time_consumption ? time_for_each_course : time_consumption;
         }

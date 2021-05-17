@@ -139,7 +139,8 @@ int main() {
    }
    */
 
-    merge_sort(ch_final, total_count);
+
+    merge_sort(ch_final,  total_count);
     
     for (int k = 0; k < total_count; k++) {
         printf("%lld\n", ch_final[k]);

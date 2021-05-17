@@ -17,3 +17,4 @@ int main() {
    // printf("%d\n", 5>>1); //
    // printf("%d\n", 5>>2); // 右移2位 bit wise operation
 }
+
