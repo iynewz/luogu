@@ -3,7 +3,7 @@
 int main() { 
     int num, ch[111111], i ,count_digit;
     scanf("%d", &num);
-    count_digit = 0;
+    count_digit = 0; 
     while(num != 0) { 
         int digit = num % 10; 
         num = num / 10; 
