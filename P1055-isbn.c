@@ -10,12 +10,12 @@ int main() {
     checknumber = 1 * c[0] + 2 * c[2] + 3 * c[3] + 4 * c[4] + 5 * c[6] + 6 * c[7] + 7 * c[8] + 8 * c[9] + 9 * c[10];
     checknumber = checknumber % 11;
     if(checknumber == 10) {
-        if(c[12] == 'X') {
+        if(c[12] + '0' == 'X') { // 注意这里的 ascii 切换
             printf("Right\n");
         }
         else{
             for(int i = 0; i < 12; i++) {
-            printf("%c", c[i]);
+            printf("%c", c[i] + '0');
             }
             printf("X\n");
         }
@@ -26,10 +26,10 @@ int main() {
             printf("Right\n");
         }
         if(c[12] != checknumber) {
-            for(int i = 0; i < 13; i++) {
-            printf("%c", c[i]);
+            for(int i = 0; i < 12; i++) {
+            printf("%c", c[i] + '0'); // ascii 切换
             }
-            printf("X\n");
+            printf("%d\n", checknumber);
         }
     }
 
