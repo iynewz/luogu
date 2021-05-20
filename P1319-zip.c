@@ -21,8 +21,34 @@ int main() {
     
     for (i = 0; scanf("%d", &array[i]) != EOF; i++);
 
-    for(int k = 0; k < i; k++) {
-        printf("%d ", array[k]);
+    // for(int k = 0; k < i; k++) {
+    //     printf("%d ", array[k]);
+    // }
+
+    int op = 0; // 用来判断奇数偶数
+    int sum = 0; // 用来换行的计数器
+    for(int count = 0; count < i; count ++){
+        if(op % 2 == 0) {
+            for(int k = 0; k < array[count]; k++) {
+                printf("0");
+                sum ++;
+                if(sum == N) {
+                    printf("\n");
+                    sum = 0;
+                }
+            }
+        }
+        else{
+            for(int k = 0; k < array[count]; k++) {
+                printf("1");
+                sum ++;
+                if(sum == N) {
+                    printf("\n");
+                    sum = 0;
+                }
+            }
+        }
+        op ++;
     }
 
     return 0;
