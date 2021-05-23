@@ -8,7 +8,7 @@ int tail = 0; // 队尾指针，push新元素进入 queue[tail] = x1
 // 进队，需要判断是否溢出
 void push(int x) {
     if(tail >= MAXN) {
-        printf("The queue is overflow.");
+        printf("The queue is overflow.\n");
     }
     else {
         queue[tail] = x;
@@ -19,7 +19,7 @@ void push(int x) {
 // 弹出队首元素
 void pop() {
     if(tail == head ) {
-        printf("The queue is empty.");
+        printf("The queue is empty.\n");
     }
     else head += 1;
 }
@@ -27,7 +27,7 @@ void pop() {
 // 查找队首元素
 int front() {
     if(tail == head) {
-        printf("The queue is empty.");
+        printf("The queue is empty.\n");
         return -1;
     }
     else return queue[head];
