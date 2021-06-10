@@ -12,6 +12,6 @@ int main() {
     if(n > 400) {
         total = 0.5663 * (n - 400) + 150 * 0.4463 + 250 * 0.4663;
     }
-    printf("%.1lf", total);
+    printf("%.1lf\n", total);
     return 0;
 }

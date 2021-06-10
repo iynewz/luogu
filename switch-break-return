@@ -1,0 +1,26 @@
+void fun1() {
+    char Variable;
+
+    Variable = xx;
+    switch (Variable) {
+    case Value1:
+        代码1;
+        break;//跳出switch循环：即直接跳到代码5（第22行）
+
+    case Value2:
+        代码2;
+        continue;//跳出本次switch循环：即直接跳回switch处（第5行）
+
+    case Value3:
+        代码3;
+        return;//跳出fun1()函数
+
+    default:
+        代码4;
+        break;
+    }
+    代码5;
+}
+————————————————
+版权声明：本文为CSDN博主「zy1049677338」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zy1049677338/article/details/59103953
