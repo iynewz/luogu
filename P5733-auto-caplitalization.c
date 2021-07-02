@@ -1,6 +1,6 @@
 #include<stdio.h>
 char a;
- 
+
 int main() {
     while((a = getchar()) != '\n') {
         if('a' <= a && a <= 'z') {

@@ -1,7 +1,7 @@
 #include<stdio.h>
 int lights[2000005];
 int n, t, b;
-float a;
+double a;
 int main() {
     for(int k = 0; k <2000005; k++) {
         lights[k] = 0; // initialize all the lights (0 means off)
@@ -9,11 +9,11 @@ int main() {
 
     scanf("%d", &n);
     for(int i = 0; i < n; i++) {
-        scanf("%f", &a);
+        scanf("%lf", &a);
         scanf("%d", &t);
-        b = (int)a;
         for(int j = 1; j <= t; j++) {
-            lights[j * b] = !(lights[j * b]);
+            b = a * j;
+            lights[b] = !(lights[b]);
         }
     }
 
