@@ -20,3 +20,26 @@ int maxProduct(int* nums, int numsSize){
     }
     return ((max - 1) * (max2 - 1));    
 }
+
+
+
+// solution2
+
+int maxProduct(int* nums, int numsSize){
+    int max = nums[0];
+    int max2 = nums[1];
+    if (max < max2) {
+        int t = max;
+        max = max2;
+        max2 = t;
+    }
+    for (int k = 2; k < numsSize; k++) {
+        if (nums[k] >= max) {
+            max2 = max;
+            max = nums[k];
+        } else if (nums[k] > max2) {
+            max2 = nums[k];
+        } 
+    }
+    return ((max - 1) * (max2 - 1));    
+}
