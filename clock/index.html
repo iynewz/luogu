@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta nam e="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Crash Course</title>
+  <style>
+    .thick-green-border {
+      border-color: rgb(199, 25, 150);
+      border-width: 50px;
+
+      border-radius: 30%;
+    }
+
+    p {
+      font-size: 16px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="demo" class="p">0</h1>
+  <button type="button" onclick=add() class="thick-green-border">+</button>
+
+  <script>
+    // signiture
+    setInterval(function () {
+      var e = document.getElementById("demo");
+      let curCounter = parseInt(e.innerText, 10) + 1;
+      console.log(curCounter);
+      e.innerText = curCounter.toString();
+    }, 1000);
+
+    // function mySetInterval(myFunc, timeout, ...args) {
+    //   while (true) {
+    //     // wait for timeout miliseconds
+    //     myFunc(...args);
+    //   }
+    }
+  </script>
+</body>
+
+</html>

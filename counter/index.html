@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta nam e="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Crash Course</title>
+  <style>
+    .thick-green-border {
+      border-color: rgb(199, 25, 150);
+      border-width: 50px;
+
+      border-radius: 30%;
+    }
+
+    p {
+      font-size: 16px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 id="demo" class="p">0</h1>
+  <button type="button" onclick=add() class="thick-green-border">+</button>
+
+  <script>
+    var counter = document.getElementById("demo").innerText;
+    function add() {
+      counter++;
+      document.getElementById("demo").innerHTML = counter;
+    }
+  </script>
+</body>
+
+</html>

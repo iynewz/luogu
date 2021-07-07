@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta nam e="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Crash Course</title>
+  <style>
+    .thick-green-border {
+      border-color: rgb(230, 237, 8);
+      border-width: 50px;
+
+      border-radius: 50%;
+      font-size: 50px;
+    }
+
+    h1 {
+      font-size: 16px;
+      font-family: monospace;
+      position: fixed;
+      bottom: 10px;
+    }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <h1 id="demo">0</h1>
+  <button type="button" onclick=dec() class="thick-green-border">-</button>
+  <button type="button" onclick=inc() class="thick-green-border">+</button>
+
+  <div class="pintainer">
+    <div class="ball">
+    </div>
+    <div class="ball"></div>
+  </div>
+  <script>
+    var fontSize = 20;
+    // increase font size of h1
+    function inc() {
+      let elem = document.querySelectorAll('h1')[0];
+      console.log(elem.style.fontSize);
+      ++fontSize;
+      elem.style.fontSize = fontSize + "px";
+    }
+    // decrease font size of h1
+    function dec() {
+      let elem = document.querySelectorAll('h1')[0];
+      console.log(elem.style.fontSize);
+      --fontSize;
+      elem.style.fontSize = fontSize + "px";
+    }
+  </script>
+</body>
+
+</html>
